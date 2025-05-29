@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+sqlalchemy
+pymysql
+mysqlclient
+python-multipart
+pandas
+scikit-learn
+mixtend
