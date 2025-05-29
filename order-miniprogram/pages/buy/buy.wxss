@@ -1,0 +1,227 @@
+/* pages/buy/buy.wxss */
+page{
+  height: 100%;
+}
+.top{
+  height: 10%;
+  background-color: #a4c612;
+  box-shadow: 10rpx 10rpx 10rpx #72706d;
+  color: #272c28;
+  width: 100%;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  font-size: 18px;
+  padding-left: 40rpx;
+  font-weight: bold;
+  letter-spacing: 5rpx;
+}
+.body{
+  height: 90%;
+  width: 100%;
+  /* background-color: blue; */
+  display: flex;
+}
+.classify{
+  width: 30%;
+  height: 100%;
+  background-color: #f6f5b8;
+  overflow: scroll;
+}
+.tea_list{
+  flex-grow: 1;
+  height: 100%;
+  background-color: #5c6539;
+  overflow: scroll;
+}
+.classify_item{
+  width: 100%;
+  height: 3rem;
+  background-color: #fff1b9;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.selected_classify_item{
+  width: 100%;
+  height: 3rem;
+  background-color: #252c28;
+  color: #a4c612;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+.tea_item{
+  width: 96%;
+  height: 6rem;
+  background-color: #fff1b9;
+  border-radius: 35rpx;
+  margin-bottom: 30rpx;
+  margin-top: 15rpx;
+  box-shadow: 10rpx 10rpx 15rpx #213b23,-5rpx -5rpx 15rpx #2e5f2e;
+  margin-left: 2%;
+  margin-right: 2%;
+  display: flex;
+}
+
+.tea_left{
+  width: 68%;
+  height: 100%;
+  /* background-color: aqua; */
+  display: flex;
+  align-items: center;
+  padding-left: 18rpx;
+}
+.tea_right{
+  width: 32%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.tea_button{
+  height: 20%;
+  width: 90%;
+  background-color: #5c6539;
+  margin-bottom: 20rpx;
+  color: #ffffff;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20rpx;
+}
+
+.tea_img{
+  width: 130rpx;
+  height: 130rpx;
+  /* background-color: red; */
+  border-radius: 20rpx;
+  box-shadow: 10rpx 10rpx 15rpx #ecd09a,-5rpx -5rpx 15rpx #ebe9d5;
+}
+.popup-mask {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.popup-content {
+  background: white;
+  width: 80%;
+  border-radius: 20rpx;
+  padding: 30rpx;
+}
+.popup-header {
+  font-size: 36rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+}
+.popup-section {
+  margin-bottom: 20rpx;
+}
+.close-btn {
+  position: absolute;
+  top: 20rpx;
+  right: 20rpx;
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #999;
+}
+.tea_img_big{
+  width: 100%;
+  /* background-color: aqua; */
+}
+.shopcar-btn {
+  position: absolute;
+  bottom: 80rpx;
+  right: 20rpx;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 100%;
+  background-color: #a4c612;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cart-popup-mask {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 999;
+}
+
+.cart-popup {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: white;
+  border-radius: 20rpx 20rpx 0 0;
+  max-height: 600rpx;
+}
+
+.cart-header {
+  font-weight: bold;
+  font-size: 32rpx;
+  margin-bottom: 20rpx;
+  display: flex;
+  justify-content: center;
+  padding-top: 20rpx;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20rpx;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+}
+
+.cart-info {
+  flex: 1;
+  margin-left: 20rpx;
+}
+
+.cart-delete {
+  color: red;
+}
+
+/* 订单确认弹出框 */
+.ordermodal{
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ordermodal .box{
+  background-color: white;
+  padding: 40rpx;
+  border-radius: 20rpx;
+  width: 40%;
+}
+
+.ordermodal .button{
+  background-color: #ff8800;
+  border-radius: 20rpx;
+  padding: 10rpx;
+  color: white;
+  font-weight: bold;
+  width: 100rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

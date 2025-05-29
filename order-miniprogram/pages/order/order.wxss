@@ -1,0 +1,69 @@
+/* pages/order/order.wxss */
+page {
+  height: 100%;
+  background-color: #f6f5b8;
+}
+
+.top {
+  top: 0;
+  position: fixed;
+  height: 10%;
+  background-color: #a4c612;
+  /* box-shadow: 0rpx 10rpx 20rpx #8b9c28; */
+  color: #272c28;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  padding-left: 40rpx;
+  font-weight: bold;
+  letter-spacing: 5rpx;
+  z-index: 10;
+}
+
+.body {
+  margin-top: 5rem;
+  height: 90%;
+  width: 100%;
+  padding-bottom: 20rpx;
+}
+
+.order-item {
+  width: 92%;
+  background-color: #fff8d2;
+  border-radius: 25rpx;
+  margin: 20rpx auto;
+  padding: 20rpx;
+  box-shadow: 10rpx 10rpx 30rpx #6a8331, -5rpx -5rpx 15rpx #e2d951;
+  margin-bottom: 2rem;
+}
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 15rpx;
+  color: #3a3a3a;
+}
+
+.tea-item {
+  background-color: #5c6539;
+  border-radius: 15rpx;
+  padding: 15rpx;
+  margin-bottom: 15rpx;
+  box-shadow: 2rpx 2rpx 5rpx #d0b67a;
+  display: flex;
+  flex-direction: column;
+  gap: 6rpx;
+  font-size: 14px;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+}
+
+.empty {
+  font-style: italic;
+  color: #777;
+  font-size: 14px;
+  margin-top: 10rpx;
+}

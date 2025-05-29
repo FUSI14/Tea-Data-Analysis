@@ -1,0 +1,28 @@
+<!--pages/order/order.wxml-->
+<view class="top">订单查看</view>
+
+<view class="body">
+  <scroll-view scroll-y="true" enhanced show-scrollbar="false">
+    <view wx:for="{{orderData}}" wx:key="orderId" class="order-item">
+      <view class="order-header">
+        <text class="order-id">订单号：{{item.orderId}}</text>
+        <text class="order-price">总价：¥{{item.totalPrice}}</text>
+      </view>
+
+      <view wx:if="{{item.orderTeas.length > 0}}">
+        <view wx:for="{{item.orderTeas}}" wx:key="index" class="tea-item">
+          <text>🍵 {{item.teaName}}</text>
+          <text>温度：{{item.temperature}}</text>
+          <text>糖度：{{item.sugarLevel}}</text>
+          <text>价格：¥{{item.thePrice}}</text>
+          <view wx:if="{{item.toppings.length > 0}}">
+            <text>小料：{{item.toppings}}</text>
+          </view>
+        </view>
+      </view>
+      <view wx:else>
+        <text class="empty">该订单无茶饮内容</text>
+      </view>
+    </view>
+  </scroll-view>
+</view>

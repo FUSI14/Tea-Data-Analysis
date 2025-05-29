@@ -1,0 +1,48 @@
+/* pages/user/user.wxss */
+page {
+  background-color: #f6f5b8;
+  height: 100%;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60rpx 20rpx;
+}
+
+.user-card {
+  background-color: #fff8d2;
+  width: 90%;
+  padding: 40rpx;
+  border-radius: 30rpx;
+  box-shadow: 0 10rpx 30rpx rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.avatar {
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 50%;
+  margin-bottom: 30rpx;
+  border: 4rpx solid #eeeeee;
+}
+
+.info {
+  text-align: center;
+}
+
+.name {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15rpx;
+}
+
+.desc {
+  font-size: 28rpx;
+  color: #666;
+  line-height: 40rpx;
+}

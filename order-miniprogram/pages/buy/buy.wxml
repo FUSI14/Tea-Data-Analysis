@@ -1,0 +1,126 @@
+<!--pages/buy/buy.wxml-->
+<view class="container">
+  <!-- 购物车弹窗按钮 -->
+  <view class="shopcar-btn" bindtap="toggleCartPopup">
+    <image src="../../static/shopcar.png" style="width: 80rpx;height: 80rpx;" />
+  </view>
+
+  <view class="top">
+    茶饮店点单程序
+  </view>
+  <view class="body">
+    <view class="classify">
+      <scroll-view :scroll-y="true" enhanced :show-scrollbar="false">
+        <view bindtap="switchClassify" wx:for="{{classifyItem}}" class="{{item.classifyId===selectedId?'selected_classify_item':'classify_item'}}" wx:key="key" data-classifyid="{{item.classifyId}}">
+          {{item.classifyName}}
+        </view>
+      </scroll-view>
+    </view>
+    <view class="tea_list">
+      <scroll-view :scroll-y="true" enhanced :show-scrollbar="false">
+        <view class="tea_item" wx:for="{{teaItem}}" wx:key="key" data-teaid="{{item.teaId}}" wx:if="{{item.classifyId==selectedId}}">
+          <view class="tea_left">
+            <image class="tea_img" src="{{item.teaImage}}" alt="" mode="aspectFit" />
+            <view style="padding-left: 15rpx;">
+              <view>
+                {{item.teaName}}
+              </view>
+              <view>
+                ￥{{item.price}} 起
+              </view>
+            </view>
+          </view>
+          <!-- 替换 tea_right 中的按钮 -->
+          <view class="tea_right">
+            <view class="tea_button" bindtap="showSpecPopup" data-tea="{{item}}">
+              选择规格
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+  <!-- 规格弹窗 -->
+  <view wx:if="{{showPopup}}" class="popup-mask" bindtap="closeSpecPopup">
+    <view class="popup-content" catchtap="stopTap">
+      <!-- 右上角关闭按钮 -->
+      <view class="close-btn" bindtap="handleClose">×</view>
+      <image class="tea_img_big" src="{{selectedTeaData.teaImage}}" alt="" mode="aspectFit" />
+      <view class="popup-header">{{selectedTeaData.teaName}}</view>
+      <view>
+        该茶饮茶底为{{selectedTeaData.teaBase}}，小料为{{selectedTeaData.fixedAddons}}
+      </view>
+      <view style="height: 20rpx;"></view>
+      <view class="popup-header">规格选择</view>
+      <!-- 温度 -->
+      <view class="popup-section">
+        <text style="font-weight: bold;">温度</text>
+        <radio-group bindchange="onTemperatureChange">
+          <label wx:for="{{temperatures}}" wx:key="item">
+            <radio value="{{item}}" checked="{{item === selectedTemperature}}" />{{item}}
+          </label>
+        </radio-group>
+      </view>
+
+      <!-- 糖度 -->
+      <view class="popup-section">
+        <text style="font-weight: bold;">糖度</text>
+        <radio-group bindchange="onSweetnessChange">
+          <label wx:for="{{sweetnessLevels}}" wx:key="item">
+            <radio value="{{item}}" checked="{{item === selectedSweetness}}" />{{item}}
+          </label>
+        </radio-group>
+      </view>
+
+      <!-- 小料 -->
+      <view class="popup-section">
+        <text style="font-weight: bold;">追加小料</text>
+        <checkbox-group bindchange="onToppingsChange">
+          <label wx:for="{{toppings}}" wx:key="item">
+            <checkbox value="{{item.toppingName}}" checked="{{isToppingSelected(item)}}" />{{item.toppingName}}
+          </label>
+        </checkbox-group>
+      </view>
+      <!-- 确定按钮 -->
+      <button bindtap="confirmSpec">确定</button>
+    </view>
+  </view>
+  <!-- 购物车弹窗 -->
+  <view wx:if="{{showCartPopup}}" class="cart-popup-mask" bindtap="toggleCartPopup">
+    <view class="cart-popup" catchtap="stopTap">
+      <view class="cart-header">
+        <text>购物车</text>
+      </view>
+      <view class="cart-list">
+        <block wx:for="{{cartList}}" wx:key="id">
+          <view class="cart-item">
+            <image src="{{item.teaImage}}" style="width: 100rpx; height: 100rpx;" />
+            <view class="cart-info">
+              <view>{{item.teaName}}</view>
+              <view>{{item.temperature}} / {{item.sweetness}} / {{item.toppings}}</view>
+            </view>
+            <view>￥{{item.finalPrice}}</view>
+            <view class="cart-delete" bindtap="removeCartItem" data-id="{{item.id}}">删除</view>
+          </view>
+        </block>
+      </view>
+
+      <view style="width: 100%; text-align: center; font-size: 32rpx; font-weight: bold; padding: 20rpx;">
+        总价：￥{{totalPrice}}
+      </view>
+      <view style="width: 100%;background-color: grey;height: 3rpx;"></view>
+      <view style="width: 100%;height:80rpx;display: flex;justify-content: center;align-items: center;font-weight: bold;font-size: 32rpx;" bindtap="setIfSubmitOrder">确定</view>
+    </view>
+  </view>
+  <!-- 订单确认弹窗 -->
+  <view wx:if="{{ifSubmitOrder}}" class="ordermodal">
+  <view class="box">
+  确认提交订单?
+  <view style="height: 25rpx;"></view>
+  <view style="display: flex;justify-content: space-between;">
+    <view bind:tap="submitOrder" class="button">提交</view>
+    <view bind:tap="cancelIfSubmitOrder" class="button">取消</view>
+  </view>
+  </view>
+  </view>
+</view>

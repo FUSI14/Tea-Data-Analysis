@@ -1,0 +1,10 @@
+<!-- pages/user/user.wxml -->
+<view class="container">
+  <view class="user-card">
+    <image src="../../static/avatar.png" class="avatar"></image>
+    <view class="info">
+      <view class="name">小程序用户</view>
+      <view class="desc">一名热爱探索的无名客。</view>
+    </view>
+  </view>
+</view>

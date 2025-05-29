@@ -1,0 +1,46 @@
+{
+  "pages": [
+    "pages/buy/buy",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/order/order",
+    "pages/user/user"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "茶饮店点单程序",
+    "navigationBarBackgroundColor": "#f6f5b8"
+  },
+  "style": "v2",
+  "componentFramework": "glass-easel",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents",
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor":"#a4c612",
+    "backgroundColor": "#f6f5b8",
+    "position": "bottom",
+    "custom": false,
+    "list": [
+      {
+        "iconPath": "./static/tea.png",
+        "selectedIconPath": "./static/stea.png",
+        "pagePath": "pages/buy/buy",
+        "text": "下单"
+      },
+      {
+        "iconPath": "./static/order.png",
+        "selectedIconPath": "./static/sorder.png",
+        "pagePath": "pages/order/order",
+        "text": "订单" 
+      },
+      {
+        "iconPath": "./static/my.png",
+        "selectedIconPath": "./static/smy.png",
+        "pagePath": "pages/user/user",
+        "text": "我的"
+      }
+    ]
+  }
+
+}
