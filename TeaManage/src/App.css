@@ -1,0 +1,105 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.center-flex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right{
+  float: right;
+}
+
+.login-input{
+  width: 100%;
+  height: 60px;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.login-body{
+  background-color: #19382b;
+  width: 100%;
+  height: 100vh;
+}
+
+.login-card{
+  width: 50%;
+  height: 40%;
+  background-color: #f3f9d7;
+  border-radius: 20px;
+  box-shadow: 6px 6px 10px #0f1910,-6px -6px 10px #2c2e31;
+}
+
+.login-title{
+  color: #282a10;
+}
+
+.login-button{
+  width: 100%;
+  height: 50px;
+  background-color: #19382b;
+  color: bisque;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 20px;
+  border: 0;
+  transition: background-color 0.3s ease; /* 平滑过渡效果 */
+}
+
+.login-button:hover {
+  background-color: #3c735b;
+}
+
+/* 行数据分析 */
+.row-analysis{
+  display: flex;
+  justify-content: space-around;
+}
+
+.ant-card {
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+h1, .ant-typography h2 {
+    font-weight: 600;
+    margin-bottom: 16px;
+}
